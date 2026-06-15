@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Safety-Net AI — an FDE portfolio</title>
+<title>Safety-Net AI · applied AI for public benefits</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -61,9 +61,9 @@
 
   <div class="wrap">
     <header class="hero">
-      <div class="eyebrow">A forward-deployed-engineer portfolio</div>
+      <div class="eyebrow">Applied AI · public benefits</div>
       <h1>AI for the public-benefits safety net</h1>
-      <p class="deck">Four FDE build patterns — agents, retrieval, fine-tuning, and MCP — in one domain: public benefits eligibility. A hallucinated answer here is not an embarrassment, it is a wrongful denial of food or medical coverage. That stake gives every evaluation real teeth.</p>
+      <p class="deck">Four build patterns (agents, retrieval, fine-tuning, and the Model Context Protocol) applied to one domain: public benefits eligibility. A wrong answer here costs a family its food or medical coverage. That stake is why every project ships a measured evaluation.</p>
     </header>
 
     <section class="s" id="projects">
@@ -74,9 +74,9 @@
         <div class="proj">
           <span class="pat">MCP</span>
           <h3>rules-as-code-mcp</h3>
-          <p class="one">Deterministic SNAP eligibility exposed as auditable MCP tools. Every determination returns a result, a rule trace, and a policy citation — never a bare yes/no.</p>
+          <p class="one">Deterministic SNAP eligibility exposed as auditable MCP tools. Every determination returns a result, a rule trace, and a policy citation, never a bare yes/no.</p>
           <div class="result">100% on 18 labeled cases (decision, rule-trace, citation) · <b>9/9</b> robustness cases handled cleanly</div>
-          <div class="links"><a href="https://github.com/adamselzer/rules-as-code-mcp">Repository ↗</a><span style="font-size:var(--text-xs);color:var(--base-light)">no GUI — an MCP server for agents</span></div>
+          <div class="links"><a href="https://github.com/adamselzer/rules-as-code-mcp">Repository ↗</a><span style="font-size:var(--text-xs);color:var(--base-light)">no GUI; an MCP server agents call</span></div>
         </div>
 
         <div class="proj">
@@ -108,7 +108,7 @@
 
     <section class="s" id="compose">
       <h2>How they compose</h2>
-      <p class="intro">The MCP rules core is the deterministic decision layer the others hand the real call to. The agent screens through it; the RAG index is exposed as a policy-lookup tool inside it; the notice it produces is what the fine-tune makes readable.</p>
+      <p class="intro">The MCP rules core is the deterministic decision layer the others hand the real call to. The agent screens through it. The RAG index sits inside it as a policy-lookup tool, and the notice the agent produces is what the fine-tune makes readable.</p>
       <div class="flowline">
         <span class="b">application + documents</span><span class="ar">→</span>
         <span class="b">intake agent</span><span class="ar">→</span>
@@ -123,7 +123,7 @@
       <div class="principles">
         <div class="pr"><b>Deterministic core, probabilistic edge</b><p>The model reads and reasons; the legal determination is made by auditable code. Knowing where to draw that line is the job.</p></div>
         <div class="pr"><b>Citations and auditability</b><p>Every answer and determination traces to a source document or a cited rule. "The model said so" is not a basis for denying benefits.</p></div>
-        <div class="pr"><b>Evaluation is the deliverable</b><p>Every repo ships a hand-built labeled set and reports real numbers — a measured failure rate, not "it worked once."</p></div>
+        <div class="pr"><b>Evaluation is the deliverable</b><p>Every repo ships a hand-built labeled set and reports real numbers, including how often it fails and how it recovers.</p></div>
         <div class="pr"><b>Synthetic data only</b><p>Every project ships a synthetic generator. Handling applicant data correctly is a core public-sector competency.</p></div>
       </div>
     </section>
@@ -134,14 +134,14 @@
         <div class="swatch" aria-hidden="true"></div>
         <div>
           <h3>Civil</h3>
-          <p>A design system in the USWDS lineage, elevated — the shared visual language across these tools.</p>
+          <p>A design system in the USWDS lineage, elevated. It is the shared visual language across these tools.</p>
         </div>
         <a href="https://github.com/adamselzer/benefits-intake-agent/blob/main/DESIGN_SYSTEM.md">DESIGN_SYSTEM.md ↗</a>
       </div>
     </section>
 
     <footer class="foot">
-      Safety-Net AI · the FDE expression of a decade of human-centered redesign of public systems ·
+      Safety-Net AI · a decade of human-centered public-systems work, applied to AI ·
       <a href="https://github.com/adamselzer">github.com/adamselzer</a>
     </footer>
   </div>

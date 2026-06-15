@@ -7,7 +7,7 @@ the shared **Civil** design system.
 
 This is the suite-level information architecture for the portfolio: one hub, one
 vocabulary, links out to each project and the design system. It is a static page
-(`index.html`) — open it directly, serve it locally, or host it on GitHub Pages.
+(`index.html`): open it directly, serve it locally, or host it on GitHub Pages.
 
 ## The projects
 
