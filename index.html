@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Safety-Net AI — an FDE portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css" />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .nav { position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between;
+    padding:14px 36px; background:rgba(251,250,248,0.9); backdrop-filter:saturate(1.2) blur(8px); border-bottom:1px solid var(--line); }
+  .nav .wm { font-family:var(--font-serif); font-size:var(--text-xl); font-weight:600; }
+  .nav .links a { color:var(--base); text-decoration:none; font-size:var(--text-sm); margin-left:var(--s-3); }
+  .nav .links a:hover { color:var(--ink); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 36px; }
+  .hero { padding:var(--s-8) 0 var(--s-6); border-bottom:1px solid var(--line-soft); }
+  .hero .eyebrow { font-size:var(--text-xs); letter-spacing:0.16em; text-transform:uppercase; color:var(--primary); font-weight:600; }
+  .hero h1 { font-family:var(--font-serif); font-size:52px; line-height:1.05; font-weight:600; letter-spacing:-0.015em; margin:10px 0 14px; max-width:18ch; }
+  .hero .deck { font-size:var(--text-xl); line-height:1.5; color:var(--base-dark); max-width:64ch; margin:0; }
+  section.s { padding:var(--s-6) 0; border-bottom:1px solid var(--line-soft); }
+  section.s > h2 { font-family:var(--font-serif); font-size:var(--text-2xl); font-weight:600; margin:0 0 6px; letter-spacing:-0.01em; }
+  section.s > .intro { font-size:var(--text-md); color:var(--base-dark); max-width:66ch; line-height:1.66; margin:0 0 var(--s-3); }
+  .projects { display:grid; grid-template-columns:1fr 1fr; gap:var(--s-2); }
+  @media (max-width:720px){ .projects { grid-template-columns:1fr; } }
+  .proj { border:1px solid var(--line); border-radius:var(--radius-lg); padding:var(--s-3); background:var(--surface); display:flex; flex-direction:column; }
+  .proj .pat { font-size:var(--text-xs); letter-spacing:0.1em; text-transform:uppercase; color:var(--primary); font-weight:600; }
+  .proj h3 { font-family:var(--font-mono); font-size:var(--text-md); font-weight:500; margin:6px 0 6px; }
+  .proj .one { font-size:var(--text-sm); color:var(--base-dark); line-height:1.55; margin:0 0 12px; flex:1; }
+  .proj .result { font-size:var(--text-sm); color:var(--ink); background:var(--base-lightest); border-radius:var(--radius-sm); padding:9px 11px; margin-bottom:12px; }
+  .proj .result b { font-family:var(--font-mono); font-weight:400; color:var(--primary-darker); }
+  .proj .links a { font-size:var(--text-sm); color:var(--primary-dark); text-decoration:none; margin-right:14px; }
+  .proj .links a:hover { text-decoration:underline; }
+  .flowline { display:flex; align-items:center; flex-wrap:wrap; gap:6px; font-family:var(--font-mono); font-size:var(--text-sm); color:var(--base-dark); }
+  .flowline .b { background:var(--base-lightest); border:1px solid var(--line); border-radius:var(--radius-sm); padding:5px 9px; }
+  .flowline .ar { color:var(--base-light); }
+  .principles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:var(--s-2); }
+  .pr { border-left:3px solid var(--primary); padding:4px 0 4px 14px; }
+  .pr b { font-size:var(--text-md); } .pr p { font-size:var(--text-sm); color:var(--base-dark); line-height:1.55; margin:4px 0 0; }
+  .ds-card { display:flex; align-items:center; gap:16px; border:1px solid var(--line); border-radius:var(--radius-lg); padding:var(--s-3); background:var(--surface); }
+  .ds-card .swatch { width:46px; height:46px; border-radius:50%; background:var(--primary); flex-shrink:0; }
+  .ds-card h3 { margin:0 0 3px; font-size:var(--text-md); font-weight:600; }
+  .ds-card p { margin:0; font-size:var(--text-sm); color:var(--base-dark); }
+  .ds-card a { margin-left:auto; font-size:var(--text-sm); color:var(--primary-dark); text-decoration:none; white-space:nowrap; }
+  .foot { padding:var(--s-5) 0 var(--s-8); color:var(--base); font-size:var(--text-sm); }
+  .foot a { color:var(--primary-dark); }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <span class="wm">Safety-Net AI</span>
+    <span class="links">
+      <a href="#projects">Projects</a>
+      <a href="#compose">How they compose</a>
+      <a href="#approach">Approach</a>
+      <a href="#design">Design system</a>
+    </span>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="eyebrow">A forward-deployed-engineer portfolio</div>
+      <h1>AI for the public-benefits safety net</h1>
+      <p class="deck">Four FDE build patterns — agents, retrieval, fine-tuning, and MCP — in one domain: public benefits eligibility. A hallucinated answer here is not an embarrassment, it is a wrongful denial of food or medical coverage. That stake gives every evaluation real teeth.</p>
+    </header>
+
+    <section class="s" id="projects">
+      <h2>The four projects</h2>
+      <p class="intro">Each runs standalone and is documented and evaluated on its own. Together they compose into one intake-to-determination pipeline a state agency could run.</p>
+      <div class="projects">
+
+        <div class="proj">
+          <span class="pat">MCP</span>
+          <h3>rules-as-code-mcp</h3>
+          <p class="one">Deterministic SNAP eligibility exposed as auditable MCP tools. Every determination returns a result, a rule trace, and a policy citation — never a bare yes/no.</p>
+          <div class="result">100% on 18 labeled cases (decision, rule-trace, citation) · <b>9/9</b> robustness cases handled cleanly</div>
+          <div class="links"><a href="https://github.com/adamselzer/rules-as-code-mcp">Repository ↗</a><span style="font-size:var(--text-xs);color:var(--base-light)">no GUI — an MCP server for agents</span></div>
+        </div>
+
+        <div class="proj">
+          <span class="pat">RAG</span>
+          <h3>policy-manual-rag</h3>
+          <p class="one">Grounded Q&amp;A over the real Michigan eligibility manual, every answer cited to its exact section, refusing when the corpus cannot ground it.</p>
+          <div class="result">retrieval Hit@4 <b>0.92→1.00</b>, citable <b>0.97→1.00</b> · faithfulness <b>0.98</b>, grounded-refusal <b>0.88</b></div>
+          <div class="links"><a href="https://github.com/adamselzer/policy-manual-rag">Repository ↗</a><span style="font-size:var(--text-xs);color:var(--base-light)">streamlit run app/app.py</span></div>
+        </div>
+
+        <div class="proj">
+          <span class="pat">Agents</span>
+          <h3>benefits-intake-agent</h3>
+          <p class="one">A document-intake triage layer: reads an application and its uploads, screens via the rules core, and flags what needs a human. Never auto-denies.</p>
+          <div class="result"><b>0%</b> wrongful wave-through, <b>0</b> denials, 100% conflict recall · 100% vision extraction</div>
+          <div class="links"><a href="https://github.com/adamselzer/benefits-intake-agent">Repository ↗</a><span style="font-size:var(--text-xs);color:var(--base-light)">uvicorn web.server:app</span></div>
+        </div>
+
+        <div class="proj">
+          <span class="pat">Fine-tuning</span>
+          <h3>plain-language-notices</h3>
+          <p class="one">A small fine-tune that rewrites bureaucratic notices into plain language while a faithfulness gate proves it kept every operative fact.</p>
+          <div class="result">prompting hits the reading target <b>20%</b> of the time, RAG <b>100%</b> · faithfulness gate disqualifies any dropped fact</div>
+          <div class="links"><a href="https://github.com/adamselzer/plain-language-notices">Repository ↗</a><span style="font-size:var(--text-xs);color:var(--base-light)">LoRA on Colab</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="s" id="compose">
+      <h2>How they compose</h2>
+      <p class="intro">The MCP rules core is the deterministic decision layer the others hand the real call to. The agent screens through it; the RAG index is exposed as a policy-lookup tool inside it; the notice it produces is what the fine-tune makes readable.</p>
+      <div class="flowline">
+        <span class="b">application + documents</span><span class="ar">→</span>
+        <span class="b">intake agent</span><span class="ar">→</span>
+        <span class="b">rules-as-code (MCP)</span><span class="ar">→</span>
+        <span class="b">determination</span><span class="ar">→</span>
+        <span class="b">plain-language notice</span>
+      </div>
+    </section>
+
+    <section class="s" id="approach">
+      <h2>The thread through all four</h2>
+      <div class="principles">
+        <div class="pr"><b>Deterministic core, probabilistic edge</b><p>The model reads and reasons; the legal determination is made by auditable code. Knowing where to draw that line is the job.</p></div>
+        <div class="pr"><b>Citations and auditability</b><p>Every answer and determination traces to a source document or a cited rule. "The model said so" is not a basis for denying benefits.</p></div>
+        <div class="pr"><b>Evaluation is the deliverable</b><p>Every repo ships a hand-built labeled set and reports real numbers — a measured failure rate, not "it worked once."</p></div>
+        <div class="pr"><b>Synthetic data only</b><p>Every project ships a synthetic generator. Handling applicant data correctly is a core public-sector competency.</p></div>
+      </div>
+    </section>
+
+    <section class="s" id="design">
+      <h2>Design system</h2>
+      <div class="ds-card">
+        <div class="swatch" aria-hidden="true"></div>
+        <div>
+          <h3>Civil</h3>
+          <p>A design system in the USWDS lineage, elevated — the shared visual language across these tools.</p>
+        </div>
+        <a href="https://github.com/adamselzer/benefits-intake-agent/blob/main/DESIGN_SYSTEM.md">DESIGN_SYSTEM.md ↗</a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      Safety-Net AI · the FDE expression of a decade of human-centered redesign of public systems ·
+      <a href="https://github.com/adamselzer">github.com/adamselzer</a>
+    </footer>
+  </div>
+</body>
+</html>
